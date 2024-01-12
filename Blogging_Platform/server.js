@@ -39,7 +39,13 @@
    })
 })
 
+app.get("/:blog", (req, res) => {
+    res.sendFile(path.join(initial_path, "blog.html"));
+})
 
+app.use((req, res) => {
+    res.json("404");
+})
 
  app.listen("3000", () => {
     console.log("Server is running on port 3000")
